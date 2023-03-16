@@ -1,0 +1,2 @@
+#!/bin/bash
+gcc -c -o $(printf "%s.o" $(echo $CFILE | cut -d . -f 1)) $CFILE
