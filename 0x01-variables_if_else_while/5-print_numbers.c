@@ -11,17 +11,10 @@
 /* betty style doc for function main goes there */
 int main(void)
 {
-	char lwr;
-	char uppr;
+	char i = '0';
 
-	for (lwr = 'a'; lwr <= 'z'; lwr++)
-	{
-		putchar(lwr);
-	}
-	for (uppr = 'A'; uppr <= 'Z'; uppr++)
-	{
-		putchar(uppr);
-	}
+	for (i = '0'; i <= '9'; i++)
+		putchar(i);
 	putchar('\n');
 	return (0);
 }
