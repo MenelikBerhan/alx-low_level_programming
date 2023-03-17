@@ -13,15 +13,17 @@ int main(void)
 {
 	int i;
 	int j;
+	int k;
+	int l;
 
 	for (i = '0'; i <= '9'; i++)
 	{
 		j = '0';
 		while (j <= '9')
 		{
-			for (int k = i; k <= '9'; k++)
+			for (k = i; k <= '9'; k++)
 			{
-				for (int l = '0'; l <= '9'; l++)
+				for (l = '0'; l <= '9'; l++)
 				{
 					if (i == k && j >= l)
 						continue;
