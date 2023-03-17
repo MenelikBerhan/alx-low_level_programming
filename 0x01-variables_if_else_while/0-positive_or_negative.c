@@ -3,6 +3,11 @@
 #include <stdio.h>
 /* more headers goes there */
 
+/**
+ * main - generates a random no. and prints wheather the no. is -=0, >5 or <6.
+ *
+ * Return: 1
+ */
 /* betty style doc for function main goes there */
 int main(void)
 {
