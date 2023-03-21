@@ -4,12 +4,12 @@
 int _putchar(char c);
 
 /**
- * print_char - prints some text.
+ * main - prints some text.
  *
  * Return: 0
  */
 
-int print_char(void)
+int main(void)
 {
 	char *wrd = "_putchar\n";
 	int i;
