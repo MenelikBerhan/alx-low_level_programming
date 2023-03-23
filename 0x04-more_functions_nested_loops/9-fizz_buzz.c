@@ -3,7 +3,7 @@
 
 /**
  * main - prints the numbers from 1 to 100 separated by space,
- *		followed by a new line. But for multiples of 3 print "Fizz",
+ *		followed by a new line. But for multiples of three print "Fizz",
  *		for the multiples of 5 print "Buzz"
  *		& "FizzBuzz" for multiples of both 3 & 5.
  *
