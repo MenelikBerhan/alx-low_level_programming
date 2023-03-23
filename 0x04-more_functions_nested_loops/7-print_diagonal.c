@@ -11,6 +11,12 @@ void print_diagonal(int n)
 {
 	int temp = n;
 
+	if (n <= 0)
+	{
+		_putchar('\n');
+		return;
+	}
+
 	while (n > 0)
 	{
 		int space = temp - n;
@@ -25,5 +31,4 @@ void print_diagonal(int n)
 
 		n--;
 	}
-	_putchar('\n');
 }
