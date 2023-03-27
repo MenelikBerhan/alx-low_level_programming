@@ -17,6 +17,8 @@ int _atoi(char *s)
 	int _strlen(char *s);
 	int pow_10(int n);
 	len = _strlen(s);
+	if (len == 0)
+		return (0);
 	/* first find the start and end point of numbers (non zero starter)*/
 	for (i = 0; i < len; i++)
 	{
@@ -24,9 +26,7 @@ int _atoi(char *s)
 		{
 		start = end = i++;
 		while (s[i] >= 48 && s[i] <= 57)
-		{
 			end = i++;
-		}
 		break;
 		}
 		start = -1;
