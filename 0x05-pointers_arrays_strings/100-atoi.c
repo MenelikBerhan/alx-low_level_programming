@@ -12,7 +12,8 @@
 
 int _atoi(char *s)
 {
-	int i, len, start, end, neg_count, ans;
+	int i, len, start, end, neg_count;
+	unsigned int ans;
 
 	int _strlen(char *s);
 	int pow_10(int n);
@@ -44,9 +45,7 @@ int _atoi(char *s)
 	/* Convert the digits from 'start' to 'end' into decimal number*/
 	ans = 0;
 	for (i = start; i <= end; i++)
-	{
 		ans += (s[i] - 48) * (pow_10(end - i));
-	}
 	/* If there are odd no. of -ve signs '-' number is -ve*/
 	if (neg_count % 2 != 0)
 		ans *= -1;
