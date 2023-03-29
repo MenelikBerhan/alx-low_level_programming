@@ -6,6 +6,7 @@
  * @dest : First operand - destination string.
  * @src : Second operand - the string from which a max of n bytes  will be
  *							taken to append to dest.
+ * @n: the number of bytes taken from src.
  *
  * Return: the concatenated string.
  */
