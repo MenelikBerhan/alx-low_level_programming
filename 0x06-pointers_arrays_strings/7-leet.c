@@ -15,7 +15,10 @@ char *leet(char *s)
 	while (*(s + i))
 	{
 		temp = *(s + i);
-		*(s + i) = tr(temp);
+		if (temp == 'a' || temp == 'A' || temp == 'e' || temp == 'E' ||
+		    temp == 'o' || temp == 'O' || temp == 'l' || temp == 'L' ||
+		    temp == 't' || temp == 'T')
+			*(s + i) = tr_a(temp);
 		i++;
 	}
 
@@ -23,38 +26,59 @@ char *leet(char *s)
 }
 
 /**
- * tr - translates a character based on 1337
+ * tr_a - translates a character based on 1337
  * @c: the character to be translated
  *
  * Return: the translated character
 */
 
-char tr(char c)
+char tr_a(char c)
 {
-	switch (c)
-	{
-	case 'a':
-	case 'A':
-		c = '4';
-		break;
-	case 'e':
-	case 'E':
-		c = '3';
-		break;
-	case 'l':
-	case 'L':
-		c = '1';
-		break;
-	case 'o':
-	case 'O':
-		c = '0';
-		break;
-	case 't':
-	case 'T':
-		c = '7';
-		break;
-	default:
-		break;
-	}
-	return (c);
+	if (c == 'e' || c == 'E' || c == 'o' || c == 'O' ||
+	c == 'l' || c == 'L' || c == 't' || c == 'T')
+		return (tr_e(c));
+	else
+		return ('4');
+}
+/**
+ * tr_e - translates a character based on 1337
+ * @c: the character to be translated
+ *
+ * Return: the translated character
+*/
+
+char tr_e(char c)
+{
+	if (c == 'o' || c == 'O' || c == 'l' || c == 'L' || c == 't' || c == 'T')
+		return (tr_o(c));
+	else
+		return ('3');
+}
+/**
+ * tr_o - translates a character based on 1337
+ * @c: the character to be translated
+ *
+ * Return: the translated character
+*/
+
+char tr_o(char c)
+{
+	if (c == 'l' || c == 'L' || c == 't' || c == 'T')
+		return (tr_l(c));
+	else
+		return ('0');
+}
+/**
+ * tr_l - translates a character based on 1337
+ * @c: the character to be translated
+ *
+ * Return: the translated character
+*/
+
+char tr_l(char c)
+{
+	if (c == 'l' || c == 'L')
+		return ('1');
+	else
+		return ('7');
 }
