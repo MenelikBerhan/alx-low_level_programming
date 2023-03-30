@@ -1,4 +1,9 @@
 #include <stdio.h>
+/**
+ * main - checks answers
+ *
+ * Return: 0.
+ */
 
 int main(void)
 {
