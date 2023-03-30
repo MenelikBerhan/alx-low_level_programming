@@ -6,17 +6,19 @@
  *
  */
 
-void print_number(int n)
+void print_number(int temp)
 {
-	if (n < 0)
+	int temp;
+
+	if (temp < 0)
 	{
-		n *= -1;
+		temp *= -1;
 		_putchar('-');
 	}
 
-	if (n / 10)
-		print_number(n / 10);
+	if (temp / 10)
+		print_number(temp / 10);
 
-	_putchar((n % 10) + 48);
+	_putchar((temp % 10) + 48);
 
 }
