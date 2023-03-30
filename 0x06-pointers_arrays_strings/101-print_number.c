@@ -6,7 +6,7 @@
  *
  */
 
-void print_number(int temp)
+void print_number(int n)
 {
 	int temp;
 
