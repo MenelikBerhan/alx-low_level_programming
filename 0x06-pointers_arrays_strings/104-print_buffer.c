@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * print_buffer - adds two numbers and writes result to buffer.
+ * print_buffer - prints buffer in a custom way.
  * @b: Buffer to be printed.
  * @size: the number of bytes to be printed from buffer b.
  *
@@ -10,9 +10,10 @@
 
 void print_buffer(char *b, int size)
 {
-	int i, j, k;
+	int i = 0, j, k;
 
-	i = 0;
+	if (size <= 0)
+		printf("\n");
 
 	while (i < size)
 	{
