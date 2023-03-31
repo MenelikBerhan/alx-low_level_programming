@@ -1,78 +1,98 @@
 #include "main.h"
 
 /**
- * rev_string - reverse array
- * @n: integer params
- * Return: 0
- */
-
-void rev_string(char *n)
-{
-	int i = 0;
-	int j = 0;
-	char temp;
-
-	while (*(n + i) != '\0')
-	{
-		i++;
-	}
-	i--;
-
-	for (j = 0; j < i; j++, i--)
-	{
-		temp = *(n + j);
-		*(n + j) = *(n + i);
-		*(n + i) = temp;
-	}
-}
-
-/**
- * infinite_add - add 2 numbers together
- * @n1: text representation of 1st number to add
- * @n2: text representation of 2nd number to add
- * @r: pointer to buffer
- * @size_r: buffer size
- * Return: pointer to calling function
+ * infinite_add - adds two numbers and writes result to buffer.
+ * @n1: First operand.
+ * @n2: Second operand.
+ * @r: Buffer to write the result to.
+ * @size_r: pointer to the string operand.
+ *
+ * Return: the string encoded by rot13.
  */
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int overflow = 0, i = 0, j = 0, digits = 0;
-	int val1 = 0, val2 = 0, temp_tot = 0;
+	int i, len1, len2, val1, val2, sum, rem;
 
-	while (*(n1 + i) != '\0')
-		i++;
-	while (*(n2 + j) != '\0')
-		j++;
-	i--;
-	j--;
-	if (j >= size_r || i >= size_r)
-		return (0);
-	while (j >= 0 || i >= 0 || overflow == 1)
+	len1 = _strlen(n1);
+	len2 = _strlen(n2);
+
+	*r = '\0';
+	i = 1;
+	rem = 0;
+
+	for (; i <= len1 || i <= len2; i++)
 	{
-		if (i < 0)
+		if (i >= size_r)
+			return (0);
+
+		if (i > len1)
 			val1 = 0;
 		else
-			val1 = *(n1 + i) - '0';
-		if (j < 0)
+			val1 = *(n1 + len1 - i) - 48;
+
+		if (i > len2)
 			val2 = 0;
 		else
-			val2 = *(n2 + j) - '0';
-		temp_tot = val1 + val2 + overflow;
-		if (temp_tot >= 10)
-			overflow = 1;
-		else
-			overflow = 0;
-		if (digits >= (size_r - 1))
-			return (0);
-		*(r + digits) = (temp_tot % 10) + '0';
-		digits++;
-		j--;
-		i--;
+			val2 = *(n2 + len2 - i) - 48;
+
+		sum = val1 + val2 + rem;
+		*(r + i) = (sum % 10) + 48;
+		rem = sum / 10;
 	}
-	if (digits == size_r)
-		return (0);
-	*(r + digits) = '\0';
-	rev_string(r);
+
+	if (rem)
+	{
+		if (i >= size_r)
+			return (0);
+		*(r + i) = rem + 48;
+		i++;
+	}
+
+	reverse_chars(r, i);
+
 	return (r);
+}
+
+
+/**
+ * _strlen - returns length of a String.
+ * @s : String operand.
+ *
+ * Return: Integer length of string.
+ */
+
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (1)
+	{
+		if (s[len] == 0)
+			break;
+		len++;
+	}
+
+	return (len);
+}
+
+/**
+ * reverse_chars - reverses the contents of a char array.
+ * @a: a char array to be reversed.
+ * @n: the number of elements in array a.
+ *
+ */
+
+void reverse_chars(char *a, int n)
+{
+	char temp1;
+	int i;
+
+	for (i = 0; i < n / 2; i++)
+	{
+		temp1 = *(a + n - 1 - i);
+
+		*(a + (n - 1 - i)) = *(a + i);
+		*(a + i) = temp1;
+	}
 }
