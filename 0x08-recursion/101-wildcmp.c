@@ -36,7 +36,9 @@ int wildcmp(char *s1, char *s2)
 
 int wildcmp_helper(char *s1, char *s2, int i1, int i2, int len1, int len2)
 {
-	/* printf("i1= %d,  i2= %d,  len1=%d,  len2=%d\n", i1, i2, len1, len2); */
+	/*printf("i1= %d,  i2= %d,  len1=%d,  len2=%d\n", i1, i2, len1, len2);*/
+	/*printf("s1[%d]= %c,  s2[%d]= %c,\n", i1, s1[i1], i2, s2[i2]);*/
+
 	if (s2[i2] == '*')
 	{
 		if (len2 - 1 == i2)
@@ -49,8 +51,16 @@ int wildcmp_helper(char *s1, char *s2, int i1, int i2, int len1, int len2)
 		i1 = _strchr(s1, s2[i2]);
 		if (i1 < 0)
 			return (0);
-		if (_strchr(s1 + i1 + 1, s2[i2]) > 0)
+		/*printf("i1= %d,  i2= %d\n", i1, i2);*/
+/*printf("_strchr(s1 + i1 + 1, s2[i2]) = %d\n",_strchr(s1 + i1 + 1, s2[i2]));*/
+		if (_strchr(s1 + i1 + 1, s2[i2]) >= 0)
+		{
 			i1 = _strchr(s1 + i1 + 1, s2[i2]) + 1 + i1;
+			/*printf("i1= %d\n", i1);*/
+		}
+		if (_strchr(s1 + i1 + 3, s2[i2]) > 0)
+			i1 = _strchr(s1 + i1 + 3, s2[i2]) + 3 + i1;
+
 		return (wildcmp_helper(s1, s2, i1, i2, len1, len2));
 	}
 
