@@ -14,5 +14,9 @@ int is_prime_helper(int n, int divisor);
 int is_palindrome(char *s);
 int null_index(char *s, int n);
 int is_palindrome_helper(char *s, int start, int end);
+int wildcmp(char *s1, char *s2);
+int wildcmp_helper(char *s1, char *s2, int i1, int i2, int len1, int len2);
+int _strchr(char *s, char c);
+int next_char(char *s, int n);
 
 #endif
