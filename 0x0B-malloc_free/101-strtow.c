@@ -18,8 +18,9 @@ char **strtow(char *str)
 		return (NULL);
 
 	dim = find_dimn(str);
-
-	ans = (char **) malloc((dim[0] + 1) * (dim[1] + 1) * sizeof(int));
+	if (dim[1] == 0)
+		return (NULL);
+	ans = (char **) malloc(sizeof(char *) * (dim[1] + 1));
 	if (ans == NULL)
 		return (NULL);
 
@@ -27,7 +28,7 @@ char **strtow(char *str)
 	{
 		if (str[i] != 32)
 		{
-			word = malloc((dim[0] + 1) * sizeof(int));
+			word = malloc((dim[0] + 1) * sizeof(char));
 			if (word == NULL)
 				return (NULL);
 
