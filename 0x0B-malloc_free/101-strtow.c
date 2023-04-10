@@ -11,7 +11,7 @@
 
 char **strtow(char *str)
 {
-	int j, row = 0, i = 0, *dim;
+	int j, row = 0, i = 0, *dim, k;
 	char **ans, *word;
 
 	if (str == NULL || str[0] == 0)
@@ -28,7 +28,10 @@ char **strtow(char *str)
 	{
 		if (str[i] != 32)
 		{
-			word = malloc((dim[0] + 1) * sizeof(char));
+
+			for (k = 0; str[i + k] != 32; k++)
+				continue;
+			word = malloc((k + 1) * sizeof(char));
 			if (word == NULL)
 				return (NULL);
 
