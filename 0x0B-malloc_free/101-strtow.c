@@ -29,7 +29,7 @@ char **strtow(char *str)
 		if (str[i] != 32)
 		{
 
-			for (k = 0; str[i + k] = 32; k++)
+			for (k = 0; str[i + k] == 32; k++)
 				continue;
 			word = malloc((k + 1) * sizeof(char));
 			if (word == NULL)
