@@ -78,14 +78,21 @@ void reverse_chars(char *a, int n)
 
 /**
  * _puts - Prints a String followed by a newline.
+ * Leading zeros are not printed.
  * @str : String to be printed.
  *
  */
 
 void _puts(char *str)
 {
-	int i = 0;
+	int i = 0, j = 0;
 
+	for (; str[j + 1]; j++)
+	{
+		if (str[j] != '0')
+			break;
+	}
+	i = j;
 	while (1)
 	{
 		if (str[i] == 0)
