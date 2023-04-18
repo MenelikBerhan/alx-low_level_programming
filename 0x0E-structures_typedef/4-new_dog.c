@@ -1,4 +1,5 @@
 #include "dog.h"
+#include <string.h>
 
 /**
  * new_dog - Creates a new dog and assign it to a pointer to type dog_t.
@@ -39,8 +40,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	_strcpy(ptr->name, name);
-	_strcpy(ptr->owner, owner);
+	strcpy(ptr->name, name);
+	strcpy(ptr->owner, owner);
 
 	ptr->age = age;
 
