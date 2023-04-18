@@ -18,13 +18,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 	ptr = malloc(sizeof(dog_t));
 	if (ptr == NULL)
 		return (NULL);
-	printf("name_len=%i, own_len= %i\n", _strlen(name), _strlen(owner));
+
 	n = malloc(sizeof(char) * (_strlen(name) + 1));
 	if (n == NULL)
 		return (NULL);
 	o = malloc(sizeof(char) * (_strlen(owner) + 1));
 	if (o == NULL)
 		return (NULL);
+
 	_strcpy(n, name);
 	_strcpy(o, owner);
 
