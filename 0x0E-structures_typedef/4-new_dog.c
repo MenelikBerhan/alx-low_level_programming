@@ -12,27 +12,22 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *ptr;
-	char *n;
-	char *o;
-	/* int len1, len2; */
 
 	ptr = malloc(sizeof(dog_t));
 	if (ptr == NULL)
 		return (NULL);
 
-	n = malloc(sizeof(char) * (_strlen(name) + 1));
-	if (n == NULL)
+	ptr->name = malloc(sizeof(char) * (_strlen(name) + 1));
+	if (ptr->name == NULL)
 		return (NULL);
-	o = malloc(sizeof(char) * (_strlen(owner) + 1));
-	if (o == NULL)
+	ptr->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
+	if (ptr->name == NULL)
 		return (NULL);
 
-	_strcpy(n, name);
-	_strcpy(o, owner);
+	_strcpy(ptr->name, name);
+	_strcpy(ptr->owner, owner);
 
-	ptr->name = n;
 	ptr->age = age;
-	ptr->owner = o;
 
 	return (ptr);
 }
