@@ -19,7 +19,7 @@ void print_all(const char * const format, ...)
 	char *str;
 
 	va_start(aptr, format);
-	while (format[i])
+	while (format && format[i])
 	{
 		bool = 1;
 		switch (format[i])
