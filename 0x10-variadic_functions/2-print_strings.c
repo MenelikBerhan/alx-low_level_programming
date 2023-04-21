@@ -26,11 +26,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		if (!str)
 			str = "(nil)";
 
+		printf("%s", str);
 		if (i != n - 1)
-			printf("%s%s", str, separator);
-		else
-			printf("%s\n", str);
+			printf("%s", separator);
 	}
-
+	printf("\n");
 	va_end(aptr);
 }
