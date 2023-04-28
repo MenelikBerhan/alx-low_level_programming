@@ -11,7 +11,7 @@ size_t print_list(const list_t *h)
 {
 	const list_t *list = h;
 	char *str;
-	int i = 0, n;
+	unsigned int i = 0, n;
 
 	while (list)
 	{
