@@ -9,19 +9,16 @@
 */
 size_t print_list(const list_t *h)
 {
-	const list_t *list = h;
-	char *str;
-	unsigned int n;
 	size_t i = 0;
 
-	while (list)
+	while (h)
 	{
-		str = list->str ? list->str : "(\"nil\")";
-		n = list->str ? list->len : 0;
+		if (!h->str)
+			printf("[0] (nil)\n");
+		else
+			printf("[%u] %s\n", h->len, h->str);
 
-		printf("[%u] %s\n", n, str);
-
-		list = list->next;
+		h = h->next;
 		i++;
 	}
 
