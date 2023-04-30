@@ -1,5 +1,5 @@
 #include "lists.h"
-#include <stdio.h>
+
 /**
  * insert_nodeint_at_index - Creates a new node with data (n) and inserts it
  * at idx index. Index starts from 0.
