@@ -1,4 +1,18 @@
 #include "lists.h"
+/**
+ * free_listint -  Frees a listint_t list.
+ * @head: a listint_t list to be freed.
+ *
+*/
+void free_listint(listint_t *head)
+{
+	if (head)
+	{
+		free_listint(head->next);
+	}
+
+	free(head);
+}
 
 /**
  * free_listint2 -  Frees a listint_t list and sets the head to NULL.
@@ -7,10 +21,6 @@
 */
 void free_listint2(listint_t **head)
 {
-	if (!(*head))
-		return;
-
-	free_listint2(&(*head)->next);
-	free(*head);
+	free_listint(*head);
 	*head = NULL;
 }
