@@ -1,5 +1,5 @@
 #include "lists.h"
-#include <stdio.h>
+
 /**
  * get_nodeint_at_index - Finds the node at index 'index' in
  * listint_t list head. Index is counted strarting from 0.
@@ -19,7 +19,6 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
 	while (i < index && temp->next)
 	{
-		/* printf("i = %d, temp.n= %d\n", i, temp->n); */
 		temp = temp->next;
 		i++;
 	}
