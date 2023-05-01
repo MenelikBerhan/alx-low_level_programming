@@ -12,8 +12,7 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	const listint_t **ptrs;
-	int i = 0, loop = 0, size = 10;
-	/* unsigned int addr; */
+	int i = 0, loop, size = 10;
 
 	if (!head)
 		return (0);
@@ -22,15 +21,13 @@ size_t print_listint_safe(const listint_t *head)
 		exit(98);
 
 	ptrs[i++] = head;
-
 	while (head)
 	{
-		/* addr = (long) head; */
 		printf("[%p] %d\n", (void *)head, head->n);
 		loop = is_loop(head->next, ptrs, i);
+
 		if (loop)
 		{
-			/* addr = (long) head; */
 			printf("-> [%p] %d\n", (void *)head->next, (head->next)->n);
 			free(ptrs);
 			return (i);
