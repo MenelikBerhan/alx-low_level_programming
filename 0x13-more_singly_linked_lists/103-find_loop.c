@@ -9,24 +9,26 @@
 */
 listint_t *find_listint_loop(listint_t *head)
 {
-
-	char address[1024], temp[16];
+	listint_t *temp, *start;
 
 	if (!head)
 		return (NULL);
 
-	sprintf(address, "%p", (void *)head);
+	start = head;
 	while (head)
 	{
-		sprintf(temp, "%p", (void *)head->next);
-		if (strstr(address, temp))
-			return (head->next);
+		temp = start;
+		while (1)
+		{
+			if (head->next == temp)
+				return (head->next);
+			if (temp == head)
+				break;
+			temp = temp->next;
+		}
 
 		head = head->next;
-		strcat(address, temp);
 	}
-	if (!head)
-		return (NULL);
 
-	return (head);
+	return (NULL);
 }
