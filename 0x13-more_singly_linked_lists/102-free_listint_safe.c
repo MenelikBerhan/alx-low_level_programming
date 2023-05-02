@@ -72,7 +72,6 @@ listint_t *loop_ptr(listint_t **h)
 
 		ptrs[i++] = temp->next;
 		temp = temp->next;
-		j++;
 	}
 	free(ptrs);
 	return (NULL);
