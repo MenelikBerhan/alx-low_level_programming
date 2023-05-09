@@ -90,7 +90,7 @@ int main(int argc, char **argv)
 	}
 
 	if (len_read == -1)
-		write(fd_to, buffer, len_read);
+		print_error(0, argv[1], 0);
 	free(buffer);
 	if (close(fd_from) == -1)
 		print_error(3, NULL, fd_from);
