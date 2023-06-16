@@ -69,6 +69,11 @@ a function that deletes the node at index `index` of a `dlistint_t` linked list.
 
 a file containing the password for `ELF` [crackme4](https://github.com/alx-tools/0x17.c)
 
+## 102-result.py
+
+a program that prints the largest palindrome number made from a product of two
+three digit numbers. Can use for others digit numbers by incrementing first loop range start value. E.g: for a in range(99, 0, -1) can print for 2 digits.
+
 ## 102-result
 
 a file containing the largest palindrome made from the product of two 3-digit numbers
