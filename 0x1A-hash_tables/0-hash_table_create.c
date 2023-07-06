@@ -2,9 +2,9 @@
 
 /**
  * hash_table_create - creates a hash table
- * @size: size of hash table to create
+ * @size: size of hash table to create (no. of nodes in table array)
  *
- * Return: pointer to `hash_table_t` type hash table
+ * Return: pointer to `hash_table_t` type hash table, or NULL if it failed
 */
 hash_table_t *hash_table_create(unsigned long int size)
 {
