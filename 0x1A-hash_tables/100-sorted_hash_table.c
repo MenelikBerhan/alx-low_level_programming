@@ -163,7 +163,7 @@ void shash_table_print(const shash_table_t *ht)
 {
 	shash_node_t *temp;
 
-	if (!ht || !(ht->array) || !ht->shead)
+	if (!ht || !(ht->array)/*  || !ht->shead */)
 		return;
 
 	printf("{");
@@ -187,7 +187,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 {
 	shash_node_t *temp;
 
-	if (!ht || !(ht->array) || !ht->shead)
+	if (!ht || !(ht->array)/*  || !ht->shead */)
 		return;
 
 	printf("{");
