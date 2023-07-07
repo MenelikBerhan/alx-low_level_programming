@@ -112,7 +112,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 			}
 			temp = temp->next;
 		}
-		new_node = malloc(sizeof(hash_node_t));
+		new_node = malloc(sizeof(shash_node_t));
 		if (!new_node)
 			return (0);
 		new_node->key = strdup(key);
@@ -163,7 +163,7 @@ void shash_table_print(const shash_table_t *ht)
 {
 	shash_node_t *temp;
 
-	if (!ht || !(ht->array)/*  || !ht->shead */)
+	if (!ht || !(ht->array))
 		return;
 
 	printf("{");
@@ -187,7 +187,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 {
 	shash_node_t *temp;
 
-	if (!ht || !(ht->array)/*  || !ht->shead */)
+	if (!ht || !(ht->array))
 		return;
 
 	printf("{");
@@ -217,8 +217,7 @@ void shash_table_delete(shash_table_t *ht)
 	{
 		temp2 = temp;
 		temp = temp->snext;
-		if (temp2->key)
-			free(temp2->key);
+		free(temp2->key);
 		if (temp2->value)
 			free(temp2->value);
 		free(temp2);
