@@ -23,17 +23,6 @@ def island_perimeter(grid):
             except ValueError:
                 next_0 = first_1 + 1
 
-            try:
-                next_1 = row.index(1, next_0)
-            except ValueError:
-                next_1 = -1
-            if next_1 != -1:
-                try:
-                    last_1 = row.index(1, next_1 + 1)
-                except ValueError:
-                    last_1 = next_1
-            else:
-                last_1 = -1
             perimeter += next_0 - first_1
-            perimeter += last_1 - next_1
+
     return perimeter
