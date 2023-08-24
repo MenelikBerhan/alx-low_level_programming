@@ -1,9 +1,13 @@
 #! /usr/bin/python3
-"""Contains a funciton that calculates perimeter"""
+"""
+Contains a funciton that calculates perimeter
+"""
 
 
 def island_perimeter(grid):
-    """`int`: Returns the perimeter of the island described in grid"""
+    """
+    `int`: Returns the perimeter of the island described in grid
+    """
     perimeter = 0
     in_island = 0
     for i, row in enumerate(grid):
