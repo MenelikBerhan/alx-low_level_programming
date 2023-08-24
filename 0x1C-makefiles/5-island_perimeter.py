@@ -25,9 +25,9 @@ def island_perimeter(grid):
             if grid[i + 1].count(1) == 0:
                 perimeter += curr_last - curr_first + 1
             if grid[i - 1].count(1) != 0:
-                prev_first = grid[i -1].index(1)
+                prev_first = grid[i - 1].index(1)
                 try:
-                    prev_last = grid[i -1].index(0, prev_first) - 1
+                    prev_last = grid[i - 1].index(0, prev_first) - 1
                 except ValueError:
                     prev_last = prev_first
                 perimeter += abs(curr_first - prev_first)
