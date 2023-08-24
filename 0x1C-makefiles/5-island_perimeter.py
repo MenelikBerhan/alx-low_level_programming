@@ -17,12 +17,20 @@ def island_perimeter(grid):
             perimeter += row_cells
         if row_cells:
             perimeter += 2
-            first_1 = row.index(1)
+            curr_first = row.index(1)
             try:
-                next_0 = row.index(0, first_1)
+                curr_last = row.index(0, curr_first) - 1
             except ValueError:
-                next_0 = first_1 + 1
-
-            perimeter += next_0 - first_1
+                curr_last = curr_first
+            if grid[i + 1].count(1) == 0:
+                perimeter += curr_last - curr_first + 1
+            if grid[i - 1].count(1) != 0:
+                prev_first = grid[i -1].index(1)
+                try:
+                    prev_last = grid[i -1].index(0, prev_first) - 1
+                except ValueError:
+                    prev_last = prev_first
+                perimeter += abs(curr_first - prev_first)
+                perimeter += abs(curr_last - prev_last)
 
     return perimeter
