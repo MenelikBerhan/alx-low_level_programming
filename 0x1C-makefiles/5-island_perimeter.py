@@ -15,16 +15,16 @@ def island_perimeter(grid):
         if not in_island and row_cells:
             in_island = 1
             perimeter += row_cells
-            # print("first row", perimeter)
-        if i == len(grid) - 1 or grid[i + 1].count(1) == 0:
+        if in_island and (i == len(grid) - 1 or grid[i + 1].count(1) == 0):
             perimeter += row_cells + 2
-            # print("last row", perimeter)
             break
         if in_island:
-            perimeter += 2
-            # print("for height + 2", perimeter)
             for j, num in enumerate(row):
+                if j == row.index(1) or (num == 1 and j == len(row) - 1):
+                    perimeter += 1
+                if j >= row.index(1) and j < len(row) - 1:
+                    if num + row[j + 1] == 1:
+                        perimeter += 1
                 if grid[i + 1][j] + num == 1:
                     perimeter += 1
-            # print("for sum", perimeter)
     return perimeter
