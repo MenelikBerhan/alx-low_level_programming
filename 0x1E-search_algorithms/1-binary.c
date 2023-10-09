@@ -2,13 +2,14 @@
 
 /**
  * binary_search - searches for a value in a sorted array of integers
- *	using the Binary search algorithm.
+ *				   using the Binary search algorithm.
  * @array: a pointer to the first element of the array to search in.
  * @size: size of the array of integers.
  * @value: value to search for.
  *
- * Return: the first index where value is located or -1 if value is not found.
- *	Prints the array being searched every time it changes.
+ * Return: the index where value is located or -1 if value is not found.
+ *		   The index might not be the first index if value is repeated in array
+ *		   Prints the array being searched every time it changes.
 */
 int binary_search(int *array, size_t size, int value)
 {

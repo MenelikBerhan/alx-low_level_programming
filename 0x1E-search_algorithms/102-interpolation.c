@@ -2,13 +2,13 @@
 
 /**
  * interpolation_search - searches for a value in a sorted array of integers
- *	using the Interpolation search algorithm.
+ *						  using the Interpolation search algorithm.
  * @array: a pointer to the first element of the array to search in.
  * @size: size of the array of integers.
  * @value: value to search for.
  *
  * Return: the first index where value is located or -1 if value is not found.
- *	Prints each comparison of array element with 'value'.
+ *		   Prints each comparison of array element with 'value'.
 */
 int interpolation_search(int *array, size_t size, int value)
 {
@@ -32,7 +32,7 @@ int interpolation_search(int *array, size_t size, int value)
 			pos = low;
 		else
 			pos = low + (((double)(high - low) / (array[high] - array[low]))
-								* (value - array[low]));
+													* (value - array[low]));
 		if (pos < size)
 		{
 			printf("Value checked array[%lu] = [%d]\n", pos, array[pos]);
