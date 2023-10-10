@@ -23,7 +23,7 @@ int binary_search_recursion(int *array, int value, int low, int high)
 		printf("%d%s", array[i], i != high ? ", " : "\n");
 	mid = (low + high) / 2;
 
-	if (array[mid] == value && (mid == 0 || array[mid - 1] != value))
+	if (array[mid] == value && (mid == low || array[mid - 1] != value))
 		return (mid);
 
 	low = array[mid] < value ? mid + 1 : low;
