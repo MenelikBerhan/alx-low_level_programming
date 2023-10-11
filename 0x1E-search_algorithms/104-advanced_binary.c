@@ -28,7 +28,8 @@ int binary_search_recursion(int *array, int value, int low, int high)
 		return (mid);
 
 	low = array[mid] < value ? mid + 1 : low;
-	high = array[mid] == value ? mid : (array[mid] > value ? mid - 1 : high);
+	high = array[mid] >= value ? mid : high;
+	/*high = array[mid] == value ? mid: (array[mid] > value ? mid - 1: high);*/
 	return (binary_search_recursion(array, value, low, high));
 }
 
