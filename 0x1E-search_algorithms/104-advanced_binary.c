@@ -24,7 +24,6 @@ int binary_search_recursion(int *array, int value, int low, int high)
 	mid = (low + high) / 2;
 
 	if (array[mid] == value && (mid == low || array[mid - 1] != value))
-	/* if (array[mid] == value && mid == low) */
 		return (mid);
 
 	low = array[mid] < value ? mid + 1 : low;
